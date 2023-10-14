@@ -16,7 +16,7 @@ app.use(log);
 
 
 //Endpoints
-app.get("/profs", function (req, res) {
+app.get("/readData", function (req, res) {
     fs.readFile(filename, "utf8", function (err, data) {
         res.writeHead(200, {
             "Content-Type": "application/json",
@@ -62,7 +62,7 @@ app.delete("/profs/:id", function (req, res) {
     });
 });
 
-app.post("/profs", function (req, res) {
+app.post("/writeData", function (req, res) {
     fs.readFile(filename, "utf8", function (err, data) {
         let dataAsObject = JSON.parse(data);
         dataAsObject.push({
